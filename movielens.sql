@@ -27,11 +27,11 @@ AND r.rating = 5
 ORDER BY m.title;
 
 -- 4. List the unique titles of each of the movies released on the most popular release day.
-SELECT * FROM movies
+SELECT title FROM movies
 WHERE release_date=(
-	SELECT COUNT(id) FROM movies
+	SELECT release_date FROM movies
 	GROUP BY release_date
-	ORDER BY COUNT(release_date) DESC LIMIT 1
+	ORDER BY COUNT(id) DESC LIMIT 1
 );
 
 
@@ -43,14 +43,3 @@ JOIN genres_movies AS gm ON gm.movie_id = m.id
 JOIN genres AS g ON g.id = gm.genre_id
 GROUP BY g.`name`
 ORDER BY COUNT(m.title) ASC;
-
-
-
-
-
-SELECT * FROM movies;
-SELECT * FROM ratings;
-SELECT * FROM users;
-SELECT * FROM occupations;
-SELECT * FROM genres;
-SELECT * FROM genres_movies;

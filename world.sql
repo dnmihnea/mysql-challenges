@@ -104,8 +104,3 @@ ORDER BY COUNT(GovernmentForm) DESC LIMIT 3;
 -- 20. How many countries have gained independence since records began?
 SELECT `Name`, IndepYear FROM country
 WHERE IndepYear IS NOT NULL;
-
-
-SELECT * FROM city;
-SELECT * FROM country;
-SELECT * FROM countrylanguage;
